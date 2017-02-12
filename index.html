@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--<link rel="stylesheet" href="css/styles.css" type="text/css">-->
+<script type="text/javascript" src="\trial.js"></script>
+<body>
+
+<div id="container" style="width:1024px;height=100%;">
+
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">Main Title of Web Page</h1></div>
+
+<div id="menu" style="background-color:#FFD700;height:200px;width:300px;float:left;">
+	<form name="input" action="html_form_action.asp" method="get">
+	Enter City 1: <input type="text" name="city1" id="start"/></br> Enter City 2: <input type="text" name="city2" id="end"/></br>
+	<input type="button" value="submit" onclick="calcRoute()"/>
+	</form>
+	</div>
+
+</div>
+
+<div id="content" style="background-color:#EEEEEE;height:200px;width:724px;float:left;">
+<!--iframe src="map.html" frameborder="0" style="height:200px;width:724px"></iframe-->
+<?php
+include 'mapnew.php';
+?>
+</div>
+
+ 
+</body>
+</html>

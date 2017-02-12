@@ -1,0 +1,29 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+function calcweather()
+{
+var temp_c = 0;
+var cityname="mumbai";
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/a73d7dcdbcc75fbf/history_20130303/q/IN/"+cityname+".json",
+ dataType : "jsonp",
+  success : function(parsed_json) {
+ //var location = parsed_json['location']['city'];
+  temp_c = parsed_json['history']['observations'][26]['tempm'];
+  alert("Current temperature in mumbai is: " + temp_c);
+  }
+  });
+});
+}
+</script>
+</head>
+<body>
+				<form name="input" method="post">
+				<input id ="buttonid" type="button" value="submit" onClick="calcweather();" name="submitbtn"/>
+				</form>
+</body>
+</html>
+	
